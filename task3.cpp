@@ -1,4 +1,4 @@
-#include "lab3_3.h"
+#include "task3.h"
 #include "check.hpp"
 #include <iostream>
 #include <pthread.h>
