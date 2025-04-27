@@ -118,12 +118,12 @@ bool check_order(const vector<int>& array_1, const vector<int>& array_2) {
 }
 
 int main() {
-    vector<int> array= read_array("../array.bin");
-    vector<int> idx= search(array, 20);
+    vector<int> array= read_array("../array_99.bin");
+    vector<int> idx= search(array, 5);
     for (int i=0; i<idx.size(); ++i)
         cout<< idx[i]<<" ";
     cout<<endl;
-    vector<int> idx_p= pthread_search(array, 20, 5);
+    vector<int> idx_p= pthread_search(array, 5, 3);
     for (int i=0; i<idx_p.size(); ++i)
         cout<< idx_p[i]<<" ";
     cout<<endl;

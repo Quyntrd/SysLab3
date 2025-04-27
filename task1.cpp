@@ -117,28 +117,28 @@ bool check_multiply(const vector<double>& matrix1, const vector<double>& matrix2
 }
 
 int main() {
-    const char* file1 = "../matrix1.bin";
-    const char* file2 = "../matrix2.bin";
+    const char* file1 = "../mat1_small.bin";
+    const char* file2 = "../mat2_small.bin";
 
     vector<double> matrix1 = read_matrix(file1);
     vector<double> matrix2 = read_matrix(file2);
 
     vector<double> result_seq = multiply_matrices(matrix1, matrix2);
     int matrix_size=sqrt(matrix1.size());
-    /*for(int i = 0; i < matrix_size; ++i) {
+    for(int i = 0; i < matrix_size; ++i) {
         for (int j = 0; j < matrix_size; j++) {
             cout << result_seq[i * matrix_size + j] << " ";
         }
         cout << endl;
-    } cout<<endl;*/
+    } cout<<endl;
 
     vector<double> result_pthread = pthread_multiply(matrix1, matrix2,5);
-    /*for(int i = 0; i < matrix_size; ++i) {
+    for(int i = 0; i < matrix_size; ++i) {
         for (int j = 0; j < matrix_size; j++) {
             cout << result_pthread[i * matrix_size + j] << " ";
         }
         cout << endl;
-    } cout<<endl;*/
+    } cout<<endl;
 
     cout<<check_multiply(result_seq, result_pthread);
     return 0;
